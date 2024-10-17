@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-10-17T19:04:48</DateModified>
+  <DateModified>2024-10-17T19:42:03</DateModified>
   <ModuleName>sync_register8bits</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>/home/fabioomega/ISE/serial_transmiter/iseconfig/sync_register8bits.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/fabioomega/ISE/serial_transmiter</ImplementationReportsDirectory>
+  <SavedFilePath>/home/lanzuolo/VHDL/iseconfig/sync_register8bits.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/lanzuolo/VHDL/</ImplementationReportsDirectory>
   <DateInitialized>2024-10-17T19:04:48</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

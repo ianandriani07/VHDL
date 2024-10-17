@@ -23,6 +23,8 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="mux_input_4_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="mux_input_8_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="sync_register8bits_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
   </files>
@@ -34,10 +36,13 @@
     </transform>
     <transform xil_pn:end_ts="1729203378" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1729203378">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1729203799" xil_pn:in_ck="-4644580166494915557" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1729203799">
+    <transform xil_pn:end_ts="1729206745" xil_pn:in_ck="5636136078261480311" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1729206745">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="mux_input_4.vhd"/>
+      <outfile xil_pn:name="mux_input_8.vhd"/>
       <outfile xil_pn:name="sync_register8bits.vhd"/>
     </transform>
   </transforms>
