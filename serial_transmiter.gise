@@ -41,9 +41,26 @@
     <transform xil_pn:end_ts="1729206745" xil_pn:in_ck="5636136078261480311" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1729206745">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="mux_input_4.vhd"/>
       <outfile xil_pn:name="mux_input_8.vhd"/>
       <outfile xil_pn:name="sync_register8bits.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1729634463" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="9106765038218223263" xil_pn:start_ts="1729634463">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1729634463" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3872415339710893665" xil_pn:start_ts="1729634463">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1729634463" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="8741956358519227365" xil_pn:start_ts="1729634463">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
   </transforms>
 
