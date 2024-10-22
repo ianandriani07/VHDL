@@ -1,0 +1,22 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -o /home/ianan/HDL/VHDL/mux8_test_bench_isim_beh.exe -prj /home/ianan/HDL/VHDL/mux8_test_bench_beh.prj mux8_test_bench 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/ianan/HDL/VHDL/mux_input_8.vhd" into library work
+Parsing VHDL file "/home/ianan/HDL/VHDL/mux8_test_bench.vhd" into library work
+Starting static elaboration
+WARNING:HDLCompiler:794 - "/home/ianan/HDL/VHDL/mux_input_8.vhd" Line 42: Statement might not cover all choices ; 'others' clause recommended
+Completed static elaboration
+Fuse Memory Usage: 83196 KB
+Fuse CPU Usage: 960 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling architecture behavioral of entity mux_input_8 [mux_input_8_default]
+Compiling architecture behavior of entity mux8_test_bench
+Time Resolution for simulation is 1ps.
+Compiled 5 VHDL Units
+Built simulation executable /home/ianan/HDL/VHDL/mux8_test_bench_isim_beh.exe
+Fuse Memory Usage: 1173112 KB
+Fuse CPU Usage: 990 ms
+GCC CPU Usage: 200 ms

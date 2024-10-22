@@ -1,0 +1,2 @@
+vhdl work "mux_input_8.vhd"
+vhdl work "mux8_test_bench.vhd"

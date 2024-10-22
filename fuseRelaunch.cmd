@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/ianan/HDL/VHDL/mux8_test_bench_isim_beh.exe" -prj "/home/ianan/HDL/VHDL/mux8_test_bench_beh.prj" "mux8_test_bench" 
