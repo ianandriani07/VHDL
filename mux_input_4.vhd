@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity mux_input_4 is
     port (
-        in_1, in_2, in_3, in_4 : in std_logic;
+        in_vec : in std_logic_vector(3 downto 0);
 		  control : in std_logic_vector(1 downto 0);
         mux4_out : out std_logic
     );
@@ -41,9 +41,9 @@ architecture Behavioral of mux_input_4 is
 begin
     with control (1 downto 0) select
     mux4_out <=
-        in_1 when "00",
-        in_2 when "01",
-        in_3 when "10",
-        in_4 when "11";
+        in_vec(0) when "00",
+        in_vec(1) when "01",
+        in_vec(2) when "10",
+        in_vec(3) when "11";
 end Behavioral;
 
