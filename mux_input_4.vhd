@@ -17,8 +17,8 @@
 -- Additional Comments: 
 --
 ----------------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -29,21 +29,21 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity mux_input_4 is
-    port (
-        in_vec : in std_logic_vector(3 downto 0);
-		  control : in std_logic_vector(1 downto 0);
-        mux4_out : out std_logic
+ENTITY mux_input_4 IS
+    PORT (
+        in_vec : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+        control : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+        mux4_out : OUT STD_LOGIC
     );
-end mux_input_4;
+END mux_input_4;
 
-architecture Behavioral of mux_input_4 is
-begin
-    with control (1 downto 0) select
+ARCHITECTURE Behavioral OF mux_input_4 IS
+BEGIN
+    WITH control (1 DOWNTO 0) SELECT
     mux4_out <=
-        in_vec(0) when "00",
-        in_vec(1) when "01",
-        in_vec(2) when "10",
-        in_vec(3) when "11";
-end Behavioral;
-
+        in_vec(0) WHEN "00",
+        in_vec(1) WHEN "01",
+        in_vec(2) WHEN "10",
+        in_vec(3) WHEN "11",
+		  '0' 		WHEN OTHERS;
+END Behavioral;

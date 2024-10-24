@@ -41,7 +41,7 @@ end sync_register8bits;
 
 architecture Behavioral of sync_register8bits is
 begin
-    process (clk, reset, enable)
+    process (clk, reset)
         variable reg: std_logic_vector(7 downto 0);
     begin
         if reset = '1' then

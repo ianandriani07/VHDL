@@ -48,6 +48,7 @@ begin
         in_vec(4) when "100",
         in_vec(5) when "101",
         in_vec(6) when "110",
-        in_vec(7) when "111";
+        in_vec(7) when "111",
+			'0' when others;
 end Behavioral;
 
