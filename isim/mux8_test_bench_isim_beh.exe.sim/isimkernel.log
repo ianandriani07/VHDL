@@ -1,0 +1,10 @@
+Command line:
+   mux8_test_bench_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  35125
+
+Tue Oct 22 20:06:25 2024
+
+
+ Elaboration Time: 0.01 sec

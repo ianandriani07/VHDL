@@ -1,0 +1,2 @@
+vhdl isim_temp "mux_input_4.vhd"
+vhdl isim_temp "mu4_test_bench.vhd"

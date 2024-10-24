@@ -5,5 +5,8 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="794" delta="unknown" >"/home/ianan/HDL/VHDL/mux_input_8.vhd" Line 42: Statement might not cover all choices ; &apos;others&apos; clause recommended
+</msg>
+
 </messages>
 
