@@ -48,11 +48,16 @@ ARCHITECTURE Behavioral OF serial_transmitter IS
 
     SIGNAL bit_cntrl : STD_LOGIC_VECTOR(2 DOWNTO 0);
     SIGNAL bit_selected : STD_LOGIC;
-    SIGNAL bit_aggregated : STD_LOGIC_VECTOR(3 DOWNTO 0);
 
-    SIGNAL out_cntrl : STD_LOGIC_VECTOR(1 DOWNTO 0);
+	 type OUTPUT_TYPE is (DEFAULT, PAD, OUTPUT);
+	 
+    SIGNAL out_cntrl : OUTPUT_TYPE;
 
     TYPE STATE IS (IDLE, COUNT, DIE);
+	 
+	 signal curr_state, new_state : STATE;
+	 
+	 signal counter : STD_LOGIC_VECTOR(2 DOWNTO 0);
 BEGIN
 
     in_reg : ENTITY work.sync_register8bits PORT MAP (
@@ -69,24 +74,19 @@ BEGIN
         mux8_out => bit_selected
         );
 
-    bit_aggregated <= bit_selected & "100";
-
-    in_mux4 : ENTITY work.mux_input_4 PORT MAP (
-        in_vec => bit_aggregated,
-        control => out_cntrl,
-        mux4_out => line
-        );
+	 with out_cntrl select
+		line <= '0' when PAD,
+				'1' when DEFAULT,
+				bit_selected when OUTPUT;
 
     state_machine : PROCESS (clk, reset)
-        VARIABLE curr_state, new_state : STATE;
-        VARIABLE counter : STD_LOGIC_VECTOR(2 DOWNTO 0);
     BEGIN
         IF reset'event AND reset = '1' THEN
             reset_int <= '1';
             enable <= '1';
-            out_cntrl <= "10";
-            curr_state := IDLE;
-            new_state := IDLE;
+            out_cntrl <= DEFAULT;
+            curr_state <= IDLE;
+            new_state <= IDLE;
             busy <= '0';
         ELSE
             reset_int <= '0';
@@ -95,35 +95,34 @@ BEGIN
         IF clk'event AND clk = '1' THEN
             CASE curr_state IS
                 WHEN IDLE =>
-                    out_cntrl <= "10";
+                    out_cntrl <= DEFAULT;
                     busy <= '0';
-                    CASE send IS
-                        WHEN '1' =>
-                            new_state := COUNT;
-                            out_cntrl <= "00";
-                            enable <= '0';
-                            counter := "111";
-                            busy <= '1';
-                        WHEN '0' => new_state := IDLE;
-                        WHEN OTHERS => new_state := new_state;
-                    END CASE;
+						  if send = '1' then
+								new_state <= COUNT;
+                        out_cntrl <= PAD;
+                        enable <= '0';
+                        counter <= "111";
+                        busy <= '1';
+                    else
+								new_state <= IDLE;
+                    END if;
                 WHEN COUNT =>
-                    out_cntrl <= "11";
+                    out_cntrl <= OUTPUT;
                     IF counter = "000" THEN
                         bit_cntrl <= counter;
-                        new_state := DIE;
+                        new_state <= DIE;
                     ELSE
                         bit_cntrl <= counter;
-                        counter := counter - 1;
+                        counter <= counter - 1;
                     END IF;
                 WHEN DIE =>
-                    out_cntrl <= "00";
-                    new_state := IDLE;
+                    out_cntrl <= PAD;
+                    new_state <= IDLE;
                     enable <= '1';
             END CASE;
         END IF;
 
-        curr_state := new_state;
+        curr_state <= new_state;
     END PROCESS;
 
 END Behavioral;
